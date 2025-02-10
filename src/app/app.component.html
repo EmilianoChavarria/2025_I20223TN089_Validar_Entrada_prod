@@ -29,7 +29,7 @@
             Campo requerido
           </small>
           <small *ngIf="esCampoInvalido('rfc')" class="text-red-500">
-            RFC inválido. Debe tener 12 o 13 caracteres alfanuméricos.
+            RFC inválido. Debe tener 13 caracteres alfanuméricos.
           </small>
         </div>
   
@@ -37,14 +37,15 @@
         <div class="mb-3 ml-2 max-w-[45%]">
           <label class="font-semibold">Teléfono:</label>
           <input [ngClass]="(esCampoVacio('telefono') || esCampoInvalido('telefono')) ? 'border-2 border-red-500' : ''"
-            type="text" formControlName="telefono" class="border p-1 rounded-md w-full">
+            type="text" formControlName="telefono" class="border p-1 rounded-md w-full outline-hidden">
           <small *ngIf="esCampoVacio('telefono')" class="text-red-500">
             Campo requerido
           </small>
           <small *ngIf="esCampoInvalido('telefono')" class="text-red-500">
-            El teléfono debe tener exactamente 10 dígitos.
+            El teléfono debe tener 10 dígitos y no debe contener letras
           </small>
         </div>
+        
   
       </div>
   
@@ -52,12 +53,12 @@
       <div class="mb-3">
         <label class="font-semibold">Contacto:</label>
         <input [ngClass]="(esCampoVacio('contacto') || esCampoInvalido('contacto')) ? 'border-2 border-red-500' : ''"
-          type="text" formControlName="contacto" class="border p-1 rounded-md w-full">
+          type="text" formControlName="contacto" class="border p-1 rounded-md w-full outline-hidden">
         <small *ngIf="esCampoVacio('contacto')" class="text-red-500">
           Campo requerido
         </small>
         <small *ngIf="esCampoInvalido('contacto')" class="text-red-500">
-          Solo se permiten letras y espacios.
+          Formato inválido
         </small>
       </div>
   
@@ -65,7 +66,7 @@
       <div class="mb-3">
         <label class="font-semibold">Correo:</label>
         <input [ngClass]="(esCampoVacio('correo') || esCampoInvalido('correo')) ? 'border-2 border-red-500' : ''"
-          type="email" formControlName="correo" class="border p-1 rounded-md w-full">
+          type="email" formControlName="correo" class="border p-1 rounded-md w-full outline-hidden">
         <small *ngIf="esCampoVacio('correo')" class="text-red-500">
           Campo requerido
         </small>
